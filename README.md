@@ -30,5 +30,7 @@ The computation makes use of the jaccard index to provide the relative similarit
 
 ### TROUBLESHOOTING:
 Please note: the given parameters for bed1, genome and folder_dir must be strings, and must give the exact file path instead of reading the files in to R.
+
 Please note: all given files must be tab delimited, and cannot exceed the given columns (e.g. bed1 MUST only contain the three given columns)
+
 Please note: bedtools must be installed for XXX to run, as XXX uses the bedtools shuffle and intersect tools. Information on the installation can be found here: http://bedtools.readthedocs.org/en/latest/

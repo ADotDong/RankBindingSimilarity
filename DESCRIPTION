@@ -5,6 +5,7 @@ Date: 2020-09-13
 Authors@R: c(person("Amy","Dong",email="amydong7777@gmail.com",role=c("aut")),
     person("Xiaomin","Bao",email="xiaomin.bao@northwestern.edu",role=c("aut")))
 Description: This package compares the genomic locations of a query bed file to the locations of known bed files, and ranks the files based on query similarity. In addition, this package is also able to determine the significance of the similarity value of bed files.
+Prerequisites: RankBindingSimilarity is an R package that can be run on an R environment. However, RankBindingSimilarity requires that another software tool, BedTools, be installed and executable in order to run RankBindingSimilarity. Information on bedtools installation can be found here: http://bedtools.readthedocs.org/en/latest/
 Usage: rankBedSimilarity(100,"/dir/bed1.txt,"/dir/genome-file.txt","/dir/folder_dir","jaccard_only")
 Encoding: UTF-8
 LazyData: true
@@ -12,4 +13,3 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 Depends:
   data.table
-  

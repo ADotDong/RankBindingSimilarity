@@ -2,7 +2,7 @@ Package: RankBindingSimilarity
 Title: Compares and Ranks the Similarities of Bed Files
 Version: 0.0.0.9000
 Date: 2020-09-13
-Authors@R: c(person("Amy","Dong",email="amydong7777@gmail.com",role=c("aut","cre")),
+Authors@R: c(person("Amy","Dong",email="amydong7777@gmail.com",role=c("cre")),
     person("Xiaomin","Bao",email="xiaomin.bao@northwestern.edu",role=c("aut")))
 
 

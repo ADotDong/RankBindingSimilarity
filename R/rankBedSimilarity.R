@@ -26,4 +26,3 @@ rankBedSimilarity = function(n=100,bed1,genome,folder_dir,method=c("jaccard_pval
   }
 
 }
-rankedBed = rankBedSimilarity(5,"/Users/xianggao/Desktop/AmyHighschool/NorthwesternBao/10000_reformat_Broad_ChIP_H3K27ac_NHEK_Broad.txt","/Users/xianggao/Desktop/AmyHighschool/NorthwesternBao/chrom.sizes","/Users/xianggao/Desktop/AmyHighschool/NorthwesternBao/focisDatabase_032220-sorted_part1","jaccard_only")

@@ -34,7 +34,7 @@ The computation makes use of the jaccard index to provide the relative similarit
 
 Download all files present in the "Examples" folder in Github. Then, run the following command after filling their file paths:
 
-> rankBedSimilarity(100, "/dir/bed1.txt, "/dir/hg19_formatted_genomebedfile.txt", "/dir/folder_dir", "jaccard_only", "/dir/database_folder")
+> rankBedSimilarity(100, "/dir/bed1.txt, "/dir/hg19_formatted_genomebedfile.txt", "/dir/database_folder", "jaccard_only", "/dir/output_path")
 
 ### TROUBLESHOOTING:
 Please note: the given parameters for bed1, genome and folder_dir must be strings, and must give the exact file path instead of reading the files in to R.

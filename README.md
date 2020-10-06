@@ -22,7 +22,7 @@ The computation makes use of the jaccard index to provide the relative similarit
 
 **bed1** The file path of a query bed file to be compared to the database files, which should be tab delimited and structured as follows: <chromName><TAB><chromStart><TAB><chromEND>
 
-**genome** The file path of a genome file, which should be tab delimited and structured as follows: <chromName><TAB><chromSize>. A pre-formatted hg19 genome file can be found on the Github.
+**genome** The file path of a genome file, which should be tab delimited and structured as follows: chromName, TAB, chromSize. A pre-formatted hg19 genome file can be found on the Github.
 
 **folder_dir** The directory of a folder containing database files to be used for comparison with the query file.
 

@@ -16,7 +16,7 @@ The computation makes use of the jaccard index to provide the relative similarit
 
 ### USAGE AND PARAMETERS:
 
-> rankBedSimilarity(100, "/dir/bed1.txt, "/dir/genome_file.txt", "/dir/folder_dir", "jaccard_only", "/dir/output_folder")
+> rankBedSimilarity(n, "/dir/bed1.txt, "/dir/genome_file.txt", "/dir/folder_dir", "jaccard_only", "/dir/output_folder")
 
 **n** The number of background files generated in order to compute the p-value. As the n increases, the p-value will become more reliable, but the user should be aware that this will significantly increase the computing time. We have set a default n of 100.
 
@@ -34,7 +34,7 @@ The computation makes use of the jaccard index to provide the relative similarit
 
 Download all files present in the "Examples" folder in Github. Then, run the following command after filling their file paths:
 
-> rankBedSimilarity(n, "/dir/bed1.txt, "/dir/hg19_formatted_genomebedfile.txt", "/dir/folder_dir", "jaccard_only", "/dir/database_folder")
+> rankBedSimilarity(100, "/dir/bed1.txt, "/dir/hg19_formatted_genomebedfile.txt", "/dir/folder_dir", "jaccard_only", "/dir/database_folder")
 
 ### TROUBLESHOOTING:
 Please note: the given parameters for bed1, genome and folder_dir must be strings, and must give the exact file path instead of reading the files in to R.

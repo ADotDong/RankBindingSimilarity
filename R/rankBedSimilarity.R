@@ -20,11 +20,18 @@ rankBedSimilarity = function(n=100,bed1,genome,folder_dir,method=c("jaccard_pval
   }
 
   if (method == "jaccard_pval"){
-    bed1 = jaccardAndPValue(n, bed1, genome, folder_dir)
-    write.csv(bed1,paste(output_path,"/",gsub("^.*/", "", bed1),"_jaccard_pval.csv",sep=""))
+    print("jaccard_pval")
+    bed = jaccardAndPValue(n, bed1, genome, folder_dir)
+    print("bed1 made")
+    write.csv(bed,paste(output_path,"/",gsub("^.*/", "", bed1),"_jaccard_pval.csv",sep=""))
+    print(paste(output_path,"/",gsub("^.*/", "", bed1),"_jaccard_pval.csv",sep=""))
+    print("file created!")
   }
   else if (method == "jaccard_only"){
+    print("jaccard_only")
     bed2 = jaccardOnly(bed1,folder_dir)
-    write.csv(bed2,paste(output_path,"/",gsub("^.*/", "", bed2),"_jaccard_only.csv",sep=""))
+    write.csv(bed2,paste(output_path,"/",gsub("^.*/", "", bed1),"_jaccard_only.csv",sep=""))
+    print(paste(output_path,"/",gsub("^.*/", "", bed1),"_jaccard_only.csv",sep=""))
+    print("file created!")
   }
 }

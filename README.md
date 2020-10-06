@@ -30,6 +30,12 @@ The computation makes use of the jaccard index to provide the relative similarit
 
 **output_path** The output path specifies where the exported .csv file (with the run results) will appear. Keep in mind that this file must already exist. Do not include a '/' at the end of the output file path.
 
+###EXAMPLE
+
+Download all files present in the "Examples" folder in Github. Then, run the following command after filling their file paths:
+
+> rankBedSimilarity(100, "/dir/bed1.txt, "/dir/hg19_formatted_genomebedfile.txt", "/dir/folder_dir", "jaccard_only", "/dir/database_folder")
+
 ### TROUBLESHOOTING:
 Please note: the given parameters for bed1, genome and folder_dir must be strings, and must give the exact file path instead of reading the files in to R.
 

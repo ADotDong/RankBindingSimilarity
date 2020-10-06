@@ -16,7 +16,7 @@ The computation makes use of the jaccard index to provide the relative similarit
 
 ### USAGE AND PARAMETERS:
 
-> rankBedSimilarity(100,"/dir/bed1.txt,"/dir/genome-file.txt","/dir/folder_dir","jaccard_only","/dir/output_folder)
+> rankBedSimilarity(100,"/dir/bed1.txt,"/dir/genome-file.txt","/dir/folder_dir","jaccard_only","/dir/output_folder")
 
 **n** The number of background files generated in order to compute the p-value. As the n increases, the p-value will become more reliable, but the user should be aware that this will significantly increase the computing time. We have set a default n of 100.
 

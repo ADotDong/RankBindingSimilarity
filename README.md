@@ -97,7 +97,7 @@ Download all files present in the "Examples" folder in Github. Then, run the fol
 The provided bed1.txt is a subset of the Broad_ChIP_H3K27ac_NHEK_Broad file from the database folder. If run correctly, the outputs should look like the following (with some minor differences due to the random generation of the background files and the number of n run):
 
 **jaccard_only**
-![jaccard_only example](https://github.com/ADotDong/RankBindingSimilarity/Example_Jaccard_Only.png)
+![jaccard_only example](https://github.com/ADotDong/RankBindingSimilarity/blob/master/Example_Jaccard_Only.png)
 
 **jaccard_pval**
 

@@ -28,7 +28,8 @@ Our package is intended to run in an R environment on any Mac, Windows, or LINUX
 
 Once all above pre-requisites have been met, open RStudio and run the following commands to install devtools, which allows for easier installation of XXX:
 
-> install.packages("devtools")/library(devtools)
+> install.packages("devtools")\
+> library(devtools)
 
 Please note that XXX requires the installation of another R package **data.table** before proper usage. In order to install data.table, run the following commands:
 
@@ -60,7 +61,7 @@ Once you have loaded the XXX package using the library() command, you should now
 
 **n** The number of background files generated in order to compute the p-value. As the n increases, the p-value will become more reliable, but the user should be aware that this will significantly increase the computing time. We have set a default n of 100.
 
-**bed1** The file path of a query bed file to be compared to the database files, which should be tab delimited and structured as follows: <chromName><TAB><chromStart><TAB><chromEND>
+**bed1** The file path of a query bed file to be compared to the database files, which should be tab delimited and structured as follows: chromName, TAB, chromSize, TAB, chromEND
 
 **genome** The file path of a genome file, which should be tab delimited and structured as follows: chromName, TAB, chromSize. A pre-formatted hg19 genome file can be found on the Github.
 

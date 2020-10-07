@@ -33,20 +33,17 @@ Once all above pre-requisites have been met, open RStudio and run the following 
 
 Please note that XXX requires the installation of another R package **data.table** before proper usage. In order to install data.table, run the following commands:
 
-> install.packages("data.table")
-
-> library(data.table)
+> install.packages("data.table")\
+>library(data.table)
 
 If the data.table package still isn't installing, try running the following commands instead:
 
-> library(devtools)
-
+> library(devtools)\
 > install_github('Rdatatable/data.table')
 
 Once data.table is installed and loaded, you can install and load the XXX package by running the following commands:
 
-> install_github("ADotDong/RankBindingSimilarity")
-
+> install_github("ADotDong/RankBindingSimilarity")\
 > library(RankBindingSimilarity)
 
 You should now be set to use the XXX package!

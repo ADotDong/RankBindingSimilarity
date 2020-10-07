@@ -2,21 +2,21 @@
 
 Written by Amy Dong and Dr. Xiaomin Bao, Northwestern University, Bao Lab.
 
-### INSTALLATION AND PRE-REQUISITES
+## INSTALLATION AND PRE-REQUISITES
 
 XXX is an R package that can be run on an R environment. However, XXX requires that another software tool, BedTools, be installed and executable in order to run XXX.
 
 BedTools is a toolset developed and maintained by the Quinlan laboratory at the University of Utah used to compare large sets of genomic features. Information relating to BedTools installation and tool function, etc. can be found at http://bedtools.readthedocs.org/en/latest/ .
 
-### DESCRIPTION:
+## DESCRIPTION:
 
 The purpose of XXX is to compute and rank the similarities between the locations of a given query bed file with multiple bed files (database files).
 
 The computation makes use of the jaccard index to provide the relative similarity between each file pairing. The jaccard index is the overlap of locations for two bed files over the total locations of both bed files, where an index of 0 indicates no similarities and 1 indicates an identical file.
 
-### INSTALLATION
+## INSTALLATION
 
-#### External Pre-Requisites
+### External Pre-Requisites
 
 Our package is intended to run in an R environment on any Mac, Windows, or LINUX operating system. In order to install XXX, the following pre-requisites must be met:
 
@@ -24,7 +24,7 @@ Our package is intended to run in an R environment on any Mac, Windows, or LINUX
 
 **bedtools** bedtools must be installed for XXX to run, as XXX uses the bedtools shuffle and intersect tools. Information on the installation of bedtools can be found here: https://bedtools.readthedocs.io/en/latest/content/installation.html
 
-#### XXX Package installation
+### XXX Package installation
 
 Once all above pre-requisites have been met, open RStudio and run the following commands to install devtools, which allows for easier installation of XXX:
 
@@ -48,9 +48,9 @@ Once data.table is installed and loaded, you can install and load the XXX packag
 
 You should now be set to use the XXX package!
 
-### USAGE AND PARAMETERS:
+## USAGE AND PARAMETERS:
 
-#### Usage Instructions
+### Usage Instructions
 
 Once you have loaded the XXX package using the library() command, you should now be able to use the XXX package. The XXX package allows the user to run the following command, which compares the locations from a query bed file and a folder of database bed files:
 
@@ -68,7 +68,7 @@ Once you have loaded the XXX package using the library() command, you should now
 
 **output_path** The output path specifies where the exported .csv file (with the run results) will appear. Keep in mind that this file must already exist. Do not include a '/' at the end of the output file path.
 
-#### Interpreting Output
+### Interpreting Output
 
 By selecting **"jaccard_pval"** as the method parameter, the command will output a .csv file in the given folder provided in the output_path parameter. The .csv file will contain an ordered table with the following columns:
 
@@ -88,7 +88,7 @@ By selecting **"jaccard_pval"** as the method parameter, the command will output
 
 By selecting **"jaccard_only"** as the method parameter, the command will output a .csv file in the given folder provided in the output_path parameter. The .csv file will contain an ordered table with only the columns **bedfile, jaccard_index, percentage_A, and percentage_B**
 
-### EXAMPLE
+## EXAMPLE
 
 Download all files present in the "Examples" folder in Github. Then, run the following command after filling their file paths:
 
@@ -96,7 +96,7 @@ Download all files present in the "Examples" folder in Github. Then, run the fol
 
 The provided bed1.txt is a subset of the Broad_ChIP_H3K27ac_NHEK_Broad file from the database folder. If run correctly, the outputs should look like the following (with some minor differences due to the random generation of the background files and the number of n run)
 
-### TROUBLESHOOTING:
+## TROUBLESHOOTING:
 
 Please note: the given parameters for bed1, genome and folder_dir must be strings, and must give the exact file path instead of reading the files in to R.
 

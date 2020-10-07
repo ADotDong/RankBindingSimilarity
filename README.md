@@ -2,21 +2,21 @@
 
 Written by Amy Dong and Dr. Xiaomin Bao, Northwestern University, Bao Lab.
 
-### INSTALLATION AND PRE-REQUISITES
+## INSTALLATION AND PRE-REQUISITES
 
 XXX is an R package that can be run on an R environment. However, XXX requires that another software tool, BedTools, be installed and executable in order to run XXX.
 
 BedTools is a toolset developed and maintained by the Quinlan laboratory at the University of Utah used to compare large sets of genomic features. Information relating to BedTools installation and tool function, etc. can be found at http://bedtools.readthedocs.org/en/latest/ .
 
-### DESCRIPTION:
+## DESCRIPTION:
 
 The purpose of XXX is to compute and rank the similarities between the locations of a given query bed file with multiple bed files (database files).
 
 The computation makes use of the jaccard index to provide the relative similarity between each file pairing. The jaccard index is the overlap of locations for two bed files over the total locations of both bed files, where an index of 0 indicates no similarities and 1 indicates an identical file.
 
-### INSTALLATION
+## INSTALLATION
 
-#### External Pre-Requisites
+### External Pre-Requisites
 
 Our package is intended to run in an R environment on any Mac, Windows, or LINUX operating system. In order to install XXX, the following pre-requisites must be met:
 
@@ -24,33 +24,33 @@ Our package is intended to run in an R environment on any Mac, Windows, or LINUX
 
 **bedtools** bedtools must be installed for XXX to run, as XXX uses the bedtools shuffle and intersect tools. Information on the installation of bedtools can be found here: https://bedtools.readthedocs.io/en/latest/content/installation.html
 
-#### XXX Package installation
+### XXX Package installation
 
 Once all above pre-requisites have been met, open RStudio and run the following commands to install devtools, which allows for easier installation of XXX:
 
-> install.packages("devtools")
+> install.packages("devtools")\
 > library(devtools)
 
 Please note that XXX requires the installation of another R package **data.table** before proper usage. In order to install data.table, run the following commands:
 
-> install.packages("data.table")
-> library(data.table)
+> install.packages("data.table")\
+>library(data.table)
 
 If the data.table package still isn't installing, try running the following commands instead:
 
-> library(devtools)
+> library(devtools)\
 > install_github('Rdatatable/data.table')
 
 Once data.table is installed and loaded, you can install and load the XXX package by running the following commands:
 
-> install_github("ADotDong/RankBindingSimilarity")
+> install_github("ADotDong/RankBindingSimilarity")\
 > library(RankBindingSimilarity)
 
 You should now be set to use the XXX package!
 
-### USAGE AND PARAMETERS:
+## USAGE AND PARAMETERS:
 
-#### Usage Instructions
+### Usage Instructions
 
 Once you have loaded the XXX package using the library() command, you should now be able to use the XXX package. The XXX package allows the user to run the following command, which compares the locations from a query bed file and a folder of database bed files:
 
@@ -58,7 +58,7 @@ Once you have loaded the XXX package using the library() command, you should now
 
 **n** The number of background files generated in order to compute the p-value. As the n increases, the p-value will become more reliable, but the user should be aware that this will significantly increase the computing time. We have set a default n of 100.
 
-**bed1** The file path of a query bed file to be compared to the database files, which should be tab delimited and structured as follows: <chromName><TAB><chromStart><TAB><chromEND>
+**bed1** The file path of a query bed file to be compared to the database files, which should be tab delimited and structured as follows: chromName, TAB, chromSize, TAB, chromEND
 
 **genome** The file path of a genome file, which should be tab delimited and structured as follows: chromName, TAB, chromSize. A pre-formatted hg19 genome file can be found on the Github.
 
@@ -68,7 +68,7 @@ Once you have loaded the XXX package using the library() command, you should now
 
 **output_path** The output path specifies where the exported .csv file (with the run results) will appear. Keep in mind that this file must already exist. Do not include a '/' at the end of the output file path.
 
-#### Interpreting Output
+### Interpreting Output
 
 By selecting **"jaccard_pval"** as the method parameter, the command will output a .csv file in the given folder provided in the output_path parameter. The .csv file will contain an ordered table with the following columns:
 
@@ -78,7 +78,7 @@ By selecting **"jaccard_pval"** as the method parameter, the command will output
 
 **pi_score** This column provides the pi score between the database file and the query bed file. The pi score takes into account the significance of the similarity using the p-value, and is calculated using the jaccard index mean ratio (real jaccard index/mean of generated background file jaccard indexes) multiplied by the negative logarithm of the p-value. The larger the pi score, the more significant the similarities between the database file and the query bed file are.
 
-**p_value** This column provides the p-value of the query bed file jaccard index in relation to a generated amount of background jaccard indexes. Essentially, the p-value is created by comparing the real jaccard index to the jaccard indexes of randomly generated background bed files. The p-value signifies how significant the jaccard index between the database file and the query bed file is, and how it compares to jaccard scores generated solely by random chance. This value increases in relability as the parameter n increases.
+**p_value** This column provides the p-value of the query bed file jaccard index in relation to a generated amount of background jaccard indexes. Essentially, the p-value is created by comparing the real jaccard index to the jaccard indexes of randomly generated background bed files. The p-value signifies how significant the jaccard index between the database file and the query bed file is, and how it compares to jaccard scores generated solely by random chance. This value increases in relability as the parameter n increases. The smaller the p-value, the more significant the jaccard index between the database file and the query bed file is.
 
 **percentage_A** This column provides the proportion of the similarities between the query file and the database bed file to the query file itself. It is the ratio of the total overlap between the query file and the database bed file over the total length of the query file. It allows users to get an idea of where the similarities between files exist.
 
@@ -88,15 +88,20 @@ By selecting **"jaccard_pval"** as the method parameter, the command will output
 
 By selecting **"jaccard_only"** as the method parameter, the command will output a .csv file in the given folder provided in the output_path parameter. The .csv file will contain an ordered table with only the columns **bedfile, jaccard_index, percentage_A, and percentage_B**
 
-### EXAMPLE
+## EXAMPLE
 
 Download all files present in the "Examples" folder in Github. Then, run the following command after filling their file paths:
 
 > rankBedSimilarity(100, "/dir/bed1.txt, "/dir/hg19_formatted_genomebedfile.txt", "/dir/database_folder", "jaccard_only", "/dir/output_path")
 
-The provided bed1.txt is a subset of the Broad_ChIP_H3K27ac_NHEK_Broad file from the database folder. If run correctly, the outputs should look like the following (with some minor differences due to the random generation of the background files and the number of n run)
+The provided bed1.txt is a subset of the Broad_ChIP_H3K27ac_NHEK_Broad file from the database folder. If run correctly, the outputs should look like the following (with some minor differences due to the random generation of the background files and the number of n run):
 
-### TROUBLESHOOTING:
+**jaccard_only**
+![jaccard_only example](https://github.com/ADotDong/RankBindingSimilarity/blob/master/Example_Jaccard_Only.png)
+
+**jaccard_pval**
+
+## TROUBLESHOOTING:
 
 Please note: the given parameters for bed1, genome and folder_dir must be strings, and must give the exact file path instead of reading the files in to R.
 

@@ -94,7 +94,7 @@ Download all files present in the "Examples" folder in Github. Then, run the fol
 
 > rankBedSimilarity(100, "/dir/bed1.txt, "/dir/hg19_formatted_genomebedfile.txt", "/dir/database_folder", "jaccard_only", "/dir/output_path")
 
-The provided bed1.txt is a subset of the Broad_ChIP_H3K27ac_NHEK_Broad file from the database folder. If run correctly, the outputs should look like the following (with some minor differences due to the random generation of the background files and the number of n run)
+The provided bed1.txt is a subset of the Broad_ChIP_H3K27ac_NHEK_Broad file from the database folder. If run correctly, the outputs should look like the following (with some minor differences due to the random generation of the background files and the number of n run):
 
 ## TROUBLESHOOTING:
 

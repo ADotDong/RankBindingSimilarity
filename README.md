@@ -4,13 +4,13 @@ Written by Amy Dong and Dr. Xiaomin Bao, Northwestern University, Bao Lab.
 
 ## INSTALLATION AND PRE-REQUISITES
 
-XXX is an R package that can be run on an R environment. However, XXX requires that another software tool, BedTools, be installed and executable in order to run XXX.
+GPSMatch (Genomic-Binding Profile Similarity Match) is an R package that can be run on an R environment. However, GPSMatch requires that another software tool, BedTools, be installed and executable in order to run GPSMatch.
 
 BedTools is a toolset developed and maintained by the Quinlan laboratory at the University of Utah used to compare large sets of genomic features. Information relating to BedTools installation and tool function, etc. can be found at http://bedtools.readthedocs.org/en/latest/ .
 
 ## DESCRIPTION:
 
-The purpose of XXX is to compute and rank the similarities between the locations of a given query bed file with multiple bed files (database files).
+The purpose of GPSMatch is to compute and rank the similarities between the locations of a given query bed file with multiple bed files (database files).
 
 The computation makes use of the jaccard index to provide the relative similarity between each file pairing. The jaccard index is the overlap of locations for two bed files over the total locations of both bed files, where an index of 0 indicates no similarities and 1 indicates an identical file.
 
@@ -18,20 +18,20 @@ The computation makes use of the jaccard index to provide the relative similarit
 
 ### External Pre-Requisites
 
-Our package is intended to run in an R environment on any Mac, Windows, or LINUX operating system. In order to install XXX, the following pre-requisites must be met:
+Our package is intended to run in an R environment on any Mac, Windows, or LINUX operating system. In order to install GPSMatch, the following pre-requisites must be met:
 
 **R-Studio** Please have a 1.3.1056 or higher version of RStudio installed. To install RStudio, follow the installation steps at the bottom of the page: https://rstudio.com/products/rstudio/download/
 
-**bedtools** bedtools must be installed for XXX to run, as XXX uses the bedtools shuffle and intersect tools. Information on the installation of bedtools can be found here: https://bedtools.readthedocs.io/en/latest/content/installation.html
+**bedtools** bedtools must be installed for GPSMatch to run, as GPSMatch uses the bedtools shuffle and intersect tools. Information on the installation of bedtools can be found here: https://bedtools.readthedocs.io/en/latest/content/installation.html
 
-### XXX Package installation
+### GPSMatch Package installation
 
-Once all above pre-requisites have been met, open RStudio and run the following commands to install devtools, which allows for easier installation of XXX:
+Once all above pre-requisites have been met, open RStudio and run the following commands to install devtools, which allows for easier installation of GPSMatch:
 
 > install.packages("devtools")\
 > library(devtools)
 
-Please note that XXX requires the installation of another R package **data.table** before proper usage. In order to install data.table, run the following commands:
+Please note that GPSMatch requires the installation of another R package **data.table** before proper usage. In order to install data.table, run the following commands:
 
 > install.packages("data.table")\
 >library(data.table)
@@ -41,20 +41,20 @@ If the data.table package still isn't installing, try running the following comm
 > library(devtools)\
 > install_github('Rdatatable/data.table')
 
-Once data.table is installed and loaded, you can install and load the XXX package by running the following commands:
+Once data.table is installed and loaded, you can install and load the GPSMatch package by running the following commands:
 
 > install_github("ADotDong/RankBindingSimilarity")\
 > library(RankBindingSimilarity)
 
-You should now be set to use the XXX package!
+You should now be set to use the GPSMatch package!
 
 ## USAGE AND PARAMETERS:
 
 ### Usage Instructions
 
-Once you have loaded the XXX package using the library() command, you should now be able to use the XXX package. The XXX package allows the user to run the following command, which compares the locations from a query bed file and a folder of database bed files:
+Once you have loaded the GPSMatch package using the library() command, you should now be able to use the GPSMatch package. The GPSMatch package allows the user to run the following command, which compares the locations from a query bed file and a folder of database bed files:
 
-> rankBedSimilarity(n, "/dir/bed1.txt, "/dir/genome_file.txt", "/dir/folder_dir", "jaccard_only", "/dir/output_folder")
+> rankBedSimilarity(n, "/dir/bed1.txt", "/dir/genome_file.txt", "/dir/folder_dir", "jaccard_only", "/dir/output_folder")
 
 **n** The number of background files generated in order to compute the p-value. As the n increases, the p-value will become more reliable, but the user should be aware that this will significantly increase the computing time. We have set a default n of 100.
 
